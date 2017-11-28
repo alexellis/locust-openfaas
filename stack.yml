@@ -1,0 +1,12 @@
+provider:
+  name: faas
+  gateway: http://localhost:8080
+
+functions:
+  locust:
+    lang: Dockerfile
+    handler: ./locust
+    image: locust
+    environment:
+      write_timeout: 500
+      read_timeout: 500
