@@ -6,7 +6,8 @@ WORKDIR /root/
 
 COPY requirements.txt   .
 RUN pip install -r requirements.txt
-COPY *.py .
+COPY index.py .
+COPY locustfile.py .
 ENV write_debug=true
 ENV read_debug=true
 
@@ -17,7 +18,7 @@ ENV read_debug=true
 # Add 10 users every second (10 secs until full speed)
 # 1000 requests total.
 
-ENV fprocess="xargs locust --no-web -c 100 -r 10 -n 1000 --host"
+ENV fprocess="xargs python index.py"
 
 HEALTHCHECK --interval=1s CMD [ -e /tmp/.lock ] || exit 1
 

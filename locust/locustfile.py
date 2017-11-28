@@ -14,4 +14,3 @@ class WebsiteUser(HttpLocust):
     task_set = GetHomePageTask
     min_wait = 0
     max_wait = 0
-
