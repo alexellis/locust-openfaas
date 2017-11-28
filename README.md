@@ -16,16 +16,17 @@ Usage:
 ```
 $ faas-cli build
 $ faas-cli deploy
-$ echo -n https://requestb.in/uhphaiuh | faas-cli invoke locust
+$ echo -n https://requestb.in/uhphaiuh | \
+  faas-cli invoke locust > results.csv && \
+  cat results.csv
 ```
 
-This will take several seconds to build up to the full load and will return the whole output to your client when done.
+This will take several seconds to build up to the full load and will return the whole output to your client when done as a CSV result file in plain-text.
 
 ```
- Name                                                           # reqs    50%    66%    75%    80%    90%    95%    98%    99%   100%
---------------------------------------------------------------------------------------------------------------------------------------------
- GET /uhphaiuh                                                    1099    450    580    770    950   4000   4200   7100   7300   7796
---------------------------------------------------------------------------------------------------------------------------------------------
+"Method","Name","# requests","# failures","Median response time","Average response time","Min response time","Max response time","Average Content Size","Requests/s"
+"GET","/uhphaiuh",1099,0,340,702,141,5702,2,213.43
+"None","Total",1099,0,340,702,141,5702,2,213.43
 ```
 
 You will also need to up the timeouts on your OpenFaaS gateway.
