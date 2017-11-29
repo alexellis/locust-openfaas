@@ -14,7 +14,7 @@ This sample function shows how to run a load-test with the locust tool. [OpenFaa
 ### Pre-reqs:
 
 * Install Docker
-* Deploy [OpenFaaS](https://www.openfaas.com)
+* Deploy [OpenFaaS](https://www.openfaas.com) and extend the built-in timeouts
 * Install `faas-cli`
 * Clone the GitHub repo
 
