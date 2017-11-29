@@ -1,3 +1,0 @@
-"Method","Name","# requests","# failures","Median response time","Average response time","Min response time","Max response time","Average Content Size","Requests/s"
-"GET","/10o7k1t1",1069,0,260,851,108,8103,2,83.96
-"None","Total",1069,0,260,851,108,8103,2,83.96
